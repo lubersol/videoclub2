@@ -1,0 +1,33 @@
+.caratula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 80%;
+    height: auto;
+}
+
+.imagen {
+    padding: 2em;
+    cursor: pointer;
+}
+
+.titulo {
+    color: #85cfec;
+    font-size: large;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-align: justify;
+    width: 30em;
+}
+
+.dia {
+    color: #85cfec;
+    padding: 1em;
+}
