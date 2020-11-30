@@ -17,8 +17,7 @@ const Home = () => {
                 </div>
             </div>
             <div className='text'>Bienvenido a mi videoclub</div>
-            <div className='collage'>
-            </div>
+            <div className='collage'></div>
             <div className='footer'>
                 <div>videoclub App</div>
                 <div>©Lucía Bermejo</div>
