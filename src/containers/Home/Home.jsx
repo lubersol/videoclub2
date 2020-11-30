@@ -10,7 +10,6 @@ const Home = () => {
     return (
         <div className='home'>
             <div className='header'>
-                <div className='logo'></div>
                 <div className='buttons'>
                     <Link to='/rentmovie'>Populares</Link>
                     <Link to='/register'>Register</Link>

@@ -20,13 +20,6 @@
     background-color: black;
 }
 
-.logo {
-    background-image: url(../../images/claqueta.png);
-    background-size: cover;
-    width: 8em;
-    height: 8em;
-}
-
 .buttons {
     display: flex;
     justify-content: flex-end;
@@ -70,12 +63,11 @@ a:hover {
     justify-content: center;
     align-items: center;
     background-image: url(../../images/cartelera.jpg);
-    background-image: url("./logo.png");
     background-repeat: no-repeat;
     background-position: center;
-    /* background-size: cover;
-    width: 50em;
-    height: auto; */
+    background-size: cover;
+    width: 45em;
+    height: 25em;
     /* margin-left: 18em;
     margin-right: 15em; */
 }
