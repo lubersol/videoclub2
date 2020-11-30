@@ -68,13 +68,16 @@ a:hover {
 .collage {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    background-image: url(../../images/sala.jpg);
-    background-size: cover;
+    align-items: center;
+    background-image: url(../../images/cartelera.jpg);
+    background-image: url("./logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: cover;
     width: 50em;
-    height: 50em;
-    margin-left: 18em;
-    margin-right: 15em;
+    height: auto; */
+    /* margin-left: 18em;
+    margin-right: 15em; */
 }
 
 .footer {
