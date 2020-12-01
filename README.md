@@ -28,9 +28,9 @@ La aplicación contiene las siguientes vistas:
 * Panel alquileres
 * Administración alquileres de todos los usuarios
 
-https://lubersol.github.io/Movies_react/
+:arrow_right: https://lubersol.github.io/Movies_react/
 
-https://videoclub-react.herokuapp.com/
+:arrow_right: https://videoclub-react.herokuapp.com/
 
 
 
