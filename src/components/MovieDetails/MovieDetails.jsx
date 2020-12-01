@@ -40,7 +40,7 @@ class Moviedetails extends Component {
         return (
             <div>
                 <button className="boton" onClick={() => this.goBack()}>atras</button>
-                <div className="caratula">
+                <div className="containerGlobal">
                     {this.pickMovie()}
                 </div>
             </div>
