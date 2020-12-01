@@ -12,24 +12,23 @@
     width: 100vw;
 }
 
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: 5em;
+    background-color: rgb(58, 56, 56);
+}
+
 .logoLubersol {
     font-family: 'Lobster', cursive;
     color: #85cfec;
     background-color: rgb(58, 56, 56);
     font-size: 3em;
     text-align: left;
-    width: 28em;
-    padding-left: 0.6em;
-}
-
-.header {
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-    align-items: center;
-    padding-right: 1em;
-    height: 5em;
-    background-color: rgb(58, 56, 56);
+    width: 4em;
+    margin-right: 2em;
 }
 
 .buttons {
@@ -39,10 +38,8 @@
     font-size: 1.5em;
     color: #a5c4c7;
     background-color: rgb(58, 56, 56);
-    width: 15em;
-    padding: 1.5em;
+    width: 18em;
     text-align: center;
-    height: 3.36em;
 }
 
 a {
@@ -83,7 +80,8 @@ a:hover {
     background-size: cover;
     width: 45em;
     height: 25em;
-    margin-right: 5em;
+    margin-right: 3.5em;
+    margin-left: 1.5em;
 }
 
 .text {

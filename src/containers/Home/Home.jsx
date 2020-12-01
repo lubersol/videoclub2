@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SearchForm } from '../../components/SearchForm/SearchForm';
 
 //Importo CSS 
 import './Home.css';
@@ -11,6 +12,9 @@ const Home = () => {
         <div className='home'>
             <header className='header'>
                 <span className="logoLubersol">Lubersol</span>
+                <div className="search">
+                    <SearchForm />
+                </div>
                 <nav className='buttons'>
                     <Link to='/rentmovie'>Populares</Link>
                     <Link to='/register'>Register</Link>
