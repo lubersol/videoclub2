@@ -28,7 +28,7 @@ La aplicación contiene las siguientes vistas:
 * Panel alquileres
 * Administración alquileres de todos los usuarios
 
-:arrow_right: https://lubersol.github.io/videoclub2/.
+### Enlace de la API a Heroku :zap:
 
 :arrow_right: https://videoclub-react.herokuapp.com/
 
