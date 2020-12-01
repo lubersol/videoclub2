@@ -10,6 +10,7 @@ const Home = () => {
     return (
         <div className='home'>
             <header className='header'>
+                <span className="logoLubersol">Lubersol</span>
                 <nav className='buttons'>
                     <Link to='/rentmovie'>Populares</Link>
                     <Link to='/register'>Register</Link>
@@ -20,7 +21,7 @@ const Home = () => {
             <section className="contenedorCentral">
                 <section className='collage'></section>
                 <section className="text"><span>Suscríbete y podrás ver una gran variedad de películas y series actuales. Puedes verlas en streaming o descargarlas! <br /><br />
-                Para inscribirte sólo necesitas un correo electrónico y una contraseña y tendrás acceso a estrenos, películas  y series populares, con su ficha detallada.</span>
+                Para inscribirte sólo necesitas un correo electrónico y una contraseña y tendrás acceso a estrenos, películas  y series populares, con su correspondiente ficha detallada.</span>
                 </section>
             </section>
             <footer className='footer'>

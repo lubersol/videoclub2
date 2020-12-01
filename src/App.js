@@ -6,6 +6,8 @@ import Home from './containers/Home/Home';
 import RentMovie from './containers/RentMovie/RentMovie';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 
+import './App.css';
+
 function App() {
   return (
     <BrowserRouter>

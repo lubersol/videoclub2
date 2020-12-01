@@ -23,9 +23,11 @@ class Moviedetails extends Component {
             return (
                 <div className="caratula">
                     <img className="imagen" alt={this.state.movie.title} src={`https://image.tmdb.org/t/p/w300${this.state.movie.poster_path}`}  ></img>
-                    <div className="titulo"> {this.state.movie.title} </div>
-                    <div className="dia"><p>Día de estreno: {this.state.movie.release_date} </p></div>
-                    <div className="descripcion"> {this.state.movie.overview} </div>
+                    <section className="cardPeli">
+                    <article className="titulo"> {this.state.movie.title} </article>
+                    <article className="dia"><p>Día de estreno: {this.state.movie.release_date} </p></article>
+                    <article className="descripcion"> {this.state.movie.overview} </article>
+                    </section>
                 </div>
             )
         } else {
