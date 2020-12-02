@@ -17,7 +17,7 @@ const Home = () => {
                 </div>
                 <nav className='buttons'>
                     <Link to='/rentmovie'>Populares</Link>
-                    <Link to='/register'>Register</Link>
+                    <Link to='/register'>Registro</Link>
                     <Link to='/login'>Login</Link>
                 </nav>
             </header>

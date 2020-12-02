@@ -3,7 +3,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.grid {
+.gridCartel {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0.5em;

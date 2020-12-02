@@ -22,12 +22,10 @@ class Moviedetails extends Component {
         if (this.state.movie?.id) {
             return (
                 <div className="caratula">
-                    <img className="imagen" alt={this.state.movie.title} src={`https://image.tmdb.org/t/p/w300${this.state.movie.poster_path}`}  ></img>
-                    <section className="cardPeli">
-                    <article className="titulo"> {this.state.movie.title} </article>
-                    <article className="dia"><p>Día de estreno: {this.state.movie.release_date} </p></article>
-                    <article className="descripcion"> {this.state.movie.overview} </article>
-                    </section>
+                    <img className="imagen" alt={this.state.movie.title} src={`https://image.tmdb.org/t/p/w300${this.state.movie.poster_path}`}></img>
+                        <article className="titulo"> {this.state.movie.title} </article>
+                        <article className="dia"><p>Día de estreno: {this.state.movie.release_date} </p></article>
+                        <article className="descripcion"> {this.state.movie.overview} </article>
                 </div>
             )
         } else {

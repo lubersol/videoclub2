@@ -66,10 +66,10 @@ class RentMovie extends Component {
                 </header>
                 <div className="cajaBotones">
                     <button className="boton" onClick={() => this.backPage()}>anterior</button>
-                    <Link to='/' className='boton'>home</Link>
+                    <Link to='/' className='boton'>inicio</Link>
                     <button className="boton" onClick={() => this.nextPage()}>siguiente</button>
                 </div>
-                <div className="grid" >{this.showMovies()}</div>
+                <div className="gridCartel" >{this.showMovies()}</div>
             </Fragment>
         );
     };
