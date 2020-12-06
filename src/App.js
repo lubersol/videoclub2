@@ -10,8 +10,8 @@ import Home from './containers/Home/Home';
 import Detail from './containers/Detail/Detail';
 import RentMovie from './containers/RentMovie/RentMovie';
 import MovieDetails from './components/MovieDetails/MovieDetails';
-//import Login from './containers/Login/Login';
-//import Register from './containers/Register/Register';
+import Login from './containers/Login/Login';
+import Register from './containers/Register/Register';
 
 //Importación hoja de estilos App
 import './App.css';
@@ -24,8 +24,8 @@ function App() {
         <Route path='/detail/:movieId' component={Detail} />
         <Route path='/rentmovie' component={RentMovie} exact />
         <Route path='/moviedetail' component={MovieDetails} exact />
-        {/* <Route path='/register' component={Register} exact /> */}
-        {/* <Route path='/login' component={Login} exact></Route> */}
+        <Route path='/register' component={Register} exact />
+        <Route path='/login' component={Login} exact></Route>
       </Switch>
     </BrowserRouter>
   );

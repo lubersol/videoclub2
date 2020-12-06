@@ -37,7 +37,7 @@ class Moviedetails extends Component {
     render() {
         return (
             <div>
-                <button className="boton" onClick={() => this.goBack()}>atras</button>
+                <button className="boton goBack" onClick={() => this.goBack()}>atras</button>
                 <div className="containerGlobal">
                     {this.pickMovie()}
                 </div>

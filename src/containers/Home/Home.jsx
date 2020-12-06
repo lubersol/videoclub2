@@ -2,44 +2,51 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchForm } from '../../components/SearchForm/SearchForm';
 import { MovieList } from '../../components/MovieList/MovieList';
+//import { Register } from '../containers/Register/Register';
+
+import 'bulma/css/bulma.css'
+
 
 //Importo CSS 
 import './Home.css';
 
 class Home extends Component {
 
-    state = { usedSearch: false, results: [] }
-
+    state = { movieResults: [], usedSearch: false }
 
     _handleResults = (results) => {
-        this.setState({ results, usedSearch: true })
+        this.setState({ movieResults: results, usedSearch: true })
     }
 
     _renderResults() {
-        return this.state.results.length === 0
+        console.log('movieResults', this.state.movieResults)
+        return this.state.movieResults.length === 0
             ? <p>No hay resultados</p>
-            : <MovieList movies={this.state.results} />           
+            : <MovieList movieResults={this.state.movieResults} />           
     }
 
+    
 render() {
     return (
         <Fragment>
             <div className='home'>
-                <header className='header'>
+                <div className='header'>
                     <span className="logoLubersol">Lubersol</span>
                     <div className="SearchForm-wrapper">
                         <SearchForm onResults={this._handleResults} />
                     </div>
+                    <div>
                     {this.state.usedSearch
                         ? this._renderResults()
                         : <small></small>
                     }
+                    </div>
                     <nav className='buttons'>
                         <Link to='/rentmovie'>Populares</Link>
                         <Link to='/register'>Registro</Link>
                         <Link to='/login'>Login</Link>
                     </nav>
-                </header>
+                </div>
                 <article className='title'>Bienvenido a mi videoclub</article>
                 <section className="contenedorCentral">
                     <section className='collage'></section>
