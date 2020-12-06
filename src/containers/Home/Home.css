@@ -36,7 +36,7 @@
     justify-content: flex-end;
     align-items: center;
     font-size: 1.5em;
-    color: #a5c4c7;
+    color: #85cfec;
     background-color: rgb(58, 56, 56);
     width: 18em;
     text-align: center;
@@ -44,7 +44,7 @@
 
 .buttons a {
     text-decoration: none;
-    color: #a5c4c7;
+    color: #85cfec;
     background-color: rgb(58, 56, 56);
     cursor: pointer;
     border-radius: 0.6em;

@@ -16,17 +16,19 @@ export class SearchForm extends Component {
         e.preventDefault()
         const { inputMovie } = this.state;
 
-        fetch(`https://api.themoviedb.org/search/movie?api_key=${API_KEY}&query=${inputMovie}`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=es-ES&query=${inputMovie}`)
             .then(res => res.json())
             .then(results => {
-                const { Search, totalResults} = results
+                const { Search = [], totalResults ="0" } = results
+                console.log({ Search, totalResults })
+                this.props.onResults(Search)
             })
-            .catch(error => console.log(error));
     }
 
+    
     render() {
         return (
-            <form onSubmit={this._handleSubmit}>
+            <form onSubmit={this._handleSubmit} >
                 <div className="field has-addons">
                     <div className="control">
                         <input className="input" type="text" placeholder="Search..." onChange={this._handleChange} />
