@@ -1,38 +1,63 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Movie } from '../Movie/Movie';
+import React, { Component, Fragment } from 'react';
 import './MovieList.css';
 
 
-export class MovieList extends Component {
-    static propTypes = {
-        movies: PropTypes.array
+class MovieList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            movie: {}
+        }
+    };
+
+    componentDidMount() {
+        let resultado = JSON.parse(localStorage.getItem('datosPelicula'));
+
+        this.setState({ movie: resultado });
+
+    }
+
+    goBack() {
+        this.props.history.push('/rentmovie');
+    }
+
+    getMovie() {
+        if (this.state.movie?.id) {
+            return (
+                <div className="caratula">
+                    <img className="imagen" alt={this.state.movie.title} src={`https://image.tmdb.org/t/p/w300${this.state.movie.poster_path}`}  ></img>
+                    <div className="film">
+                        <article className="titulo"> {this.state.movie.title} 
+                        </article> 
+                        <article className="dia"><p>Fecha de estreno: {this.state.movie.release_date} </p></article>
+                        <article className="descripcion"> {this.state.movie.overview} </article>
+                    </div>
+
+
+                </div>
+            )
+        } else {
+            return (
+                <div>CARGANDO...</div>
+            )
+        }
+
     }
 
     render() {
-        const { movies } = this.props
         return (
-            <div className="MovieList">
-                {
-                    movies.map(movie => {
-                        return (
-                            <div key={movie.id} className="MovieList-item">
-                                <Movie
-                                    id={movie.id}
-                                    title={movie.title}
-                                    release_date={movie.release_date}
-                                    poster_path={movie.poster_path}
-                                    overview={movie.overview}
-                                />
-                            </div>
-                        )
-                    })
-                }
-            </div>
+            <Fragment>
+            <button className="boton goBack" onClick={() => this.goBack()}>atras</button>
+                <div className="containerGlobal">
+                    {this.getMovie()}
+                </div>
+            </Fragment>
         )
     }
 }
 
+export default MovieList;
 
 
 

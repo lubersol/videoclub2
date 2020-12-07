@@ -7,7 +7,9 @@ import 'bulma/css/bulma.css';
 
 //Importacion de containers & componentes
 import Home from './containers/Home/Home';
-import Detail from './containers/Detail/Detail';
+// import SearchForm from './components/SearchForm/SearchForm';
+import MovieList from './components/MovieList/MovieList';
+//import Detail from './containers/Detail/Detail';
 import RentMovie from './containers/RentMovie/RentMovie';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Login from './containers/Login/Login';
@@ -21,7 +23,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path='/' component={Home} exact />
-        <Route path='/detail/:movieId' component={Detail} />
+        {/* <Route path='/searchform' component={SearchForm} />  */}
+        <Route path='/movielist' component={MovieList} exact />
         <Route path='/rentmovie' component={RentMovie} exact />
         <Route path='/moviedetail' component={MovieDetails} exact />
         <Route path='/register' component={Register} exact />

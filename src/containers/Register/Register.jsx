@@ -26,28 +26,24 @@ class Register extends Component {
     }
 
     handleSubmit = async (event) => {
-        const {
-            name,
-            email,
-            password
-        } = this.state;
-
-        await axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user', {
-            user: {
-                name: name,
-                email: email,
-                password: password
-            }
-        }, { withCredentials: true }
-        )
-            .then(response => {
-                console.log('Registrado', response);
-            })
-            .catch(error => {
-                console.log('error al registrarse', error);
-            });
-        // history.push('/login')
-        event.preventDefault();
+        try {
+            event.preventDefault();
+            const {
+                name,
+                email,
+                password
+            } = this.state;
+            await axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user', {
+                user: {
+                    name: name,
+                    email: email,
+                    password: password
+                }
+            }, { withCredentials: true })
+            console.log({ message: 'Registrado' })
+        } catch (error) {
+            console.log({message: 'Error al registrarse'})
+    }
     }
 
     render() {
