@@ -1,6 +1,12 @@
+body {
+    background-color: black;
+}
+
 .containerGlobal {
     display: flex;
     flex-direction:column;
+    background-color: black;
+
 }
 
 .goBack{
@@ -15,17 +21,22 @@
     align-items: center;
     max-width: 100%;
     height: auto;
+    background-color: black;
+
 }
 
 .imagen {
     padding: 2em;
     cursor: pointer;
+    background-color: black;
+
 }
 
 .cardMovie {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 
 .titulo {
@@ -40,12 +51,14 @@
     font-size: large;
     font-weight: bold;
     padding: 1em;
+    background-color: black;
 }
 
 .dia {
     display: flex;
     color: #85cfec;
     padding: 1em;
+    background-color: black;
 }
 
 .descripcion {
@@ -53,4 +66,5 @@
     color: white;
     text-align: justify;
     width: 30em;
+    background-color: black;
 }

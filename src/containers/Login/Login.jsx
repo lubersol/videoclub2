@@ -1,79 +1,66 @@
-import React, { Component } from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-
+import { notification } from 'antd';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-class Login extends Component {
 
-    constructor(props) {
-        super(props);
+const Login = ({ setUser }) => {
+    
+    const history = useHistory();
 
-        this.state = {
-            email: '',
-            password: '',
-            registrationErrors: ''
-        }
+    const handleSubmit = event => {
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
-
-    handleSubmit = async (event) => {
-        const {
-            email,
-            password
-        } = this.state;
-
-        await axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user/login', {
-            user: {
-                email: email,
-                password: password
-            }
-        }, { withCredentials: true }
-        )
-            .then(response => {
-                console.log('logueado', response);
-            })
-            .catch(error => {
-                console.log('error al loguearse', error);
-            });
-        // history.push('/login')
         event.preventDefault();
+        const user = {
+            email: event.target.email.value,
+            password: event.target.password.value
+        };
+        console.log(user);
+        axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user/login', user)
+            .then(res => {
+                console.log('axios ok');
+                localStorage.setItem('token', res.data.token);
+                localStorage.setItem('user', JSON.stringify(res.data));
+
+                setUser(res.data);
+
+                notification.success({ message: 'Login correcto!', description: 'Bienvenido a mi videoclub ' + user.email })
+
+                setTimeout(() => {
+                    history.push('/logout');
+                }, 1000);
+            })
+            .catch(error => { throw (error) })
     }
 
-    render() {
-        return (
-            <div className="containerForm">
-                <header className="cabeceraBoton">
-                    <div className='botonCaja'>
-                        <Link to='/' className='boton_atras'>Volver atras</Link>
-                    </div>
+
+    return (
+        <div className="containerForm">
+            <header className="cabeceraBoton">
+                <div className='botonCaja'>
+                    <Link to='/' className='boton_atras'>Volver atras</Link>
+                </div>
+            </header>
+            <form className="formulario" onSubmit={handleSubmit}>
+                <header className="cajaTitulo">
+                    <p className="titular">Area cliente</p>
                 </header>
-                <form className="formulario" onSubmit={this.handleSubmit}>
-                    <header className="cajaTitulo">
-                        <p className="titular">Area cliente</p>
-                    </header>
-                    <div className="campo">
-                        <input className="datos" type="email" name="email" placeholder="Introduce tu email" value={this.state.email} onChange={this.handleChange} required />
-                    </div>
-                    <div className="campo">
-                        <input className="datos" type="password" name="password" placeholder="Introduce una contraseña" value={this.state.password} onChange={this.handleChange} required />
-                    </div>
-                    <div className="campo">
-                        <button type="submit" className="enviar" onClick={() => this.handleSubmit()}>
-                            Enviar
+                <div className="campo">
+                    <input className="datos" type="email" name="email" placeholder="Introduce tu email" required />
+                </div>
+                <div className="campo">
+                    <input className="datos" type="password" name="password" placeholder="Introduce una contraseña" required />
+                </div>
+                <div className="campo">
+                    <button type="submit" className="enviar">
+                        Enviar
                         </button>
-                    </div>
-                </form>
-            </div>
-        );
-    };
+                </div>
+            </form>
+        </div>
+    );
 };
+
 export default Login;

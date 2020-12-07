@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import './MovieList.css';
 
 
 class MovieList extends Component {
