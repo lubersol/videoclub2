@@ -26,7 +26,7 @@ const Register = () => {
 
                 setTimeout(() => {
                 history.push("/login")
-                }, 1500);  
+                }, 1000);  
             })
             .catch(error => 
                 { throw (error) })

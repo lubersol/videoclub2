@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 const Login = ({ setUser }) => {
-    
+
     const history = useHistory();
 
     const handleSubmit = event => {
@@ -29,7 +29,7 @@ const Login = ({ setUser }) => {
                 notification.success({ message: 'Login correcto!', description: 'Bienvenido a mi videoclub ' + user.email })
 
                 setTimeout(() => {
-                    history.push('/logout');
+                    history.push('/rentmovie');
                 }, 1000);
             })
             .catch(error => { throw (error) })

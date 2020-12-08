@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-//import './Watch.css';
+import './Watch.css';
 import { Input, notification } from 'antd';
 import { useHistory } from "react-router";
 import { Link } from 'react-router-dom';

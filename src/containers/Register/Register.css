@@ -87,3 +87,9 @@
     width: 3.5em;
 }
 
+.enviar:hover {
+    background-color: rgb(189, 45, 69);
+    border: 1px solid;
+    color: white;
+}
+

@@ -21,7 +21,7 @@ body {
     justify-content: space-around;
     align-content: center;
     align-items: center;
-    height: 5em;
+    height: 7em;
     background-color: rgb(58, 56, 56);
 }
 
@@ -45,7 +45,7 @@ body {
     width: 18em;
     text-align: center;
     border-radius: 0.6em;
-    padding: 0.3em;
+    padding: 0.4em;
 }
 
 .buttons a {
@@ -54,7 +54,9 @@ body {
     background-color: rgb(58, 56, 56);
     cursor: pointer;
     border-radius: 0.6em;
-    padding: 0.4em;
+    padding-left: 0.3em;
+    padding-right:0.3em;
+    padding-bottom: 0.4em;
 }
 
 a:hover {
