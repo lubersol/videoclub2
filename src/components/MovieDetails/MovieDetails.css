@@ -77,6 +77,15 @@ body {
     padding-bottom: 2em;
 }
 
+.precio{
+    display: flex;
+    justify-content: center;
+    color: #85cfec;
+    padding: 1em;
+    background-color: black;
+    width:80%;
+}
+
 .containerAlquilar {
     display:flex;
     justify-content: center;

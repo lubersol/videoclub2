@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-//import './Order.css';
+import './Order.css';
 import { Link } from 'react-router-dom';
 
 
@@ -25,22 +25,20 @@ const Order = () => {
     }, [])
 
     return (
-        <div className='appointmentprofile'>
-            <div className='grid'>
-                {order?.map(movie =>
-                    <div key={movie.id}
-                        className='infoAppointment'>
-                        <div className='inside'>
-                            {movie.title}</div>
-                        <div className='inside'>
-                            {movie.description}</div>
-                        <div className='inside'>
-                            {movie.date}</div>
+        <div className='orderProfile'>
+                <header>
+                    <p className="titularGracias">¡Gracias por confiar en nosotros!</p>
+                </header>
+                <div className='infoOrder'>
+                    <div className='inside'>
+                        <p className="textoP">Disfruta  2 días de la película que has escogido.</p>
                     </div>
-                )}
-            </div>
+                    <div className='inside'>
+                        <p className="textoP">Esperamos volver a verte pronto.</p>
+                    </div>
+                </div>
             <div className="justifybutton">
-                <Link to='/logout' className='backbutton'>Back</Link>
+                <Link to='/' className='botonInicio'>Inicio</Link>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import { notification } from 'antd';
@@ -6,35 +6,29 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
-const Login = ({ setUser }) => {
+const Login = (props) => {
 
     const history = useHistory();
 
-    const handleSubmit = event => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-        event.preventDefault();
-        const user = {
-            email: event.target.email.value,
-            password: event.target.password.value
-        };
-        console.log(user);
-        axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user/login', user)
-            .then(res => {
-                console.log('axios ok');
-                localStorage.setItem('token', res.data.token);
-                localStorage.setItem('user', JSON.stringify(res.data));
+    const handleSubmit = async (event) => {
 
-                setUser(res.data);
-
-                notification.success({ message: 'Login correcto!', description: 'Bienvenido a mi videoclub ' + user.email })
-
-                setTimeout(() => {
-                    history.push('/rentmovie');
-                }, 1000);
-            })
-            .catch(error => { throw (error) })
+        try {
+            event.preventDefault();
+            let login = await axios.post('https://heroku-mongo-mi-atlas.herokuapp.com/api/user/login', { email, password });
+            let token = await login.data.token;
+            localStorage.setItem('token', token);
+            localStorage.setItem('email', email);
+            props.setUser(email);
+            notification.success({ message: 'Login correcto!', description: 'Bienvenido a mi videoclub ' })
+            history.push('/')
+        } catch (error) {
+            console.error(error)
+            notification.error({ message: 'Error', description: 'Ha habido un problema en el login' })
+        }
     }
-
 
     return (
         <div className="containerForm">
@@ -48,10 +42,10 @@ const Login = ({ setUser }) => {
                     <p className="titular">Area cliente</p>
                 </header>
                 <div className="campo">
-                    <input className="datos" type="email" name="email" placeholder="Introduce tu email" required />
+                    <input className="datos" type="email" onChange={event=>setEmail(event.target.value)} name="email" placeholder="Introduce tu email" required />
                 </div>
                 <div className="campo">
-                    <input className="datos" type="password" name="password" placeholder="Introduce una contraseña" required />
+                    <input className="datos" type="password" onChange={event=>setPassword(event.target.value)} name="password" placeholder="Introduce una contraseña" required />
                 </div>
                 <div className="campo">
                     <button type="submit" className="enviar">
