@@ -23,7 +23,7 @@ const Login = (props) => {
             localStorage.setItem('email', email);
             props.setUser(email);
             notification.success({ message: 'Login correcto!', description: 'Bienvenido a mi videoclub ' })
-            history.push('/')
+            history.push('/rentmovie')
         } catch (error) {
             console.error(error)
             notification.error({ message: 'Error', description: 'Ha habido un problema en el login' })

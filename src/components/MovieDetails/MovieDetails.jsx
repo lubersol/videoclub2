@@ -19,7 +19,11 @@ class Moviedetails extends Component {
     }
 
     goRent() {
-        this.props.history.push('/order')
+        this.props.history.push('/movielist')
+    }
+
+    goLogin() {
+        this.props.history.push('/login')
     }
 
     pickMovie() {
